@@ -2,6 +2,13 @@ project(AVFoundation)
 
 remove_sdk_framework(AVFoundation)
 
+get_path_preframework(avfoundation_sdk_path)
+append_path_sdk_subframework(${avfoundation_sdk_path} avfoundation_sdk_path AVFoundation
+    VERSION ${FRAMEWORK_VERSION}
+)
+
+add_subdirectory(AVFAudio)
+
 set(DYLIB_COMPAT_VERSION "1.0.0")
 set(DYLIB_CURRENT_VERSION "2.0.0")
 
@@ -523,7 +530,12 @@ add_framework(AVFoundation
 	constants.m
 
     DEPENDENCIES
+        AVFAudio
         system
         objc
         Foundation
 )
+
+set(AVFAudio_BUILD ${CMAKE_CURRENT_BINARY_DIR}/AVFAudio/AVFAudio)
+
+reexport(AVFoundation AVFAudio ${AVFAudio_BUILD})
