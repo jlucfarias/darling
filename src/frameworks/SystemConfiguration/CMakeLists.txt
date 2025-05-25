@@ -5,15 +5,21 @@ remove_sdk_framework(SystemConfiguration)
 set(CMAKE_CXX_STANDARD 11)
 include_directories(BEFORE ${CMAKE_CURRENT_BINARY_DIR})
 
+set(FRAMEWORK_VERSION "A")
+
 set(SystemConfiguration_SRCS
+	SCDConsoleUser.c
+	SCDGet.c
+	SCDHostName.c
+	SCDKeys.c
+	SCDNotifierInformViaCallback.c
+	SCDNotifierSetKeys.c
+	SCDOpen.c
 	SCDynamicStoreCopySpecific.cpp
 	SCSchemaDefinitions.c
 	SCNetworkReachability.c
 	SCNetworkConnection.c
-	stubs.c
 )
-
-set(FRAMEWORK_VERSION "A")
 
 generate_sdk_framework(SystemConfiguration
     VERSION ${FRAMEWORK_VERSION}
@@ -29,7 +35,7 @@ add_framework(SystemConfiguration
 		${SystemConfiguration_SRCS}
 
 	DEPENDENCIES
-		system
 		CoreFoundation
+		system
 		cxx
 )

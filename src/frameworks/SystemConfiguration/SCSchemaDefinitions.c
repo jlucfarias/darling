@@ -30,4 +30,11 @@ CONST_STRING_DECL(kSCPropNetProxiesProxyAutoConfigEnable, "ProxyAutoConfigEnable
 CONST_STRING_DECL(kSCPropNetProxiesProxyAutoConfigJavaScript, "ProxyAutoConfigJavaScript");
 CONST_STRING_DECL(kSCPropNetProxiesProxyAutoConfigURLString, "ProxyAutoConfigURLString");
 CONST_STRING_DECL(kSCPropNetProxiesProxyAutoDiscoveryEnable, "ProxyAutoDiscoveryEnable");
-
+const CFStringRef kSCDynamicStoreDomainState = CFSTR("State:");
+const CFStringRef kSCEntNetIPv4 = CFSTR("IPv4");
+const CFStringRef kSCEntNetIPv6 = CFSTR("IPv6");
+const CFStringRef kSCPropNetIPv4Router = CFSTR("Router");
+const CFStringRef kSCPropNetIPv6Router = CFSTR("Router");
+const CFStringRef kSCCompSystem = CFSTR("System");
+const CFStringRef kSCCompAnyRegex = CFSTR("[^/]+");
+const CFStringRef kSCEntNetDNS = CFSTR("DNS");
