@@ -92,7 +92,6 @@ typedef NS_ENUM(uint8_t, UINibValueType)
 
 @interface UINibDecoder : NSCoder
 {
-    CFDataRef _data;
     const uint8_t *_bytes;
     NSUInteger _length;
 
@@ -103,8 +102,8 @@ typedef NS_ENUM(uint8_t, UINibValueType)
     struct UINibClassName *_classNames;
 
     id<UINibDecoderDelegate> _delegate;
-    CFMutableDictionaryRef _nameClassMapper;
-    CFMutableDictionaryRef _objRefMapper;
+    NSMutableDictionary _nameClassMapper;
+    NSMutableDictionary _objRefMapper;
 }
 
 - (instancetype)initForReadingWithData:(NSData *)data;
