@@ -362,7 +362,7 @@ void	CAAudioFileConverter::ConvertFile(const ConversionParameters &_params)
 			// set the bitrate
 			if (mParams.output.bitRate != -1) {
 				if (mParams.flags & kOpt_Verbose)
-					printf("bitrate = %ld\n", mParams.output.bitRate);
+					printf("bitrate = %d\n", mParams.output.bitRate);
 				mDestFile.SetConverterProperty(kAudioConverterEncodeBitRate, sizeof(UInt32), &mParams.output.bitRate);
 			}
 
