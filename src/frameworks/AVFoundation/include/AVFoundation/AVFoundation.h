@@ -23,6 +23,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NSString *AVMetadataKey;
+
 #import <AVFoundation/AVAssetReaderOutputAdaptor.h>
 #import <AVFoundation/AVAssetResourceLoaderRequest.h>
 #import <AVFoundation/AVAssetWriterFigAssetWriterNotificationHandlerDelegate.h>
