@@ -21,4 +21,6 @@
 
 @interface UINibDecoder : NSObject
 
+- (instancetype) initForReadingWithData: (NSData *) data;
+
 @end
